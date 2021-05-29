@@ -145,7 +145,7 @@
       // set price to default price
       let price = thisProduct.data.price;
 
-       // for every category (param)...
+      // for every category (param)...
       for(let paramId in thisProduct.data.params){
         // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
         const param = thisProduct.data.params[paramId];
@@ -164,28 +164,26 @@
             }
           } else {
           // check if the option is default
-          if(option.default) {
-            // reduce price variable
+            if(option.default) {
+              // reduce price variable
               price -= option.price;
+            }
           }
-        }
-        // find picture with class : .paramId-optionId in div with images
-        const activeImage =  thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          // find picture with class : .paramId-optionId in div with images
+          const activeImage =  thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
 
-        // check optionId 
-         if(activeImage){
+          // check optionId 
+          if(activeImage){
           // show image
-          if(formData[paramId] && formData[paramId].includes(optionId)){
-
-            activeImage.classList.add(classNames.menuProduct.imageVisible);
-            // hide image
-          } else {
-            activeImage.classList.remove(classNames.menuProduct.imageVisible);
+            if(formData[paramId] && formData[paramId].includes(optionId)){
+              activeImage.classList.add(classNames.menuProduct.imageVisible);
+              // hide image
+            } else {
+              activeImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
           }
         }
       }
-    }
-
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
 
