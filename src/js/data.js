@@ -55,7 +55,7 @@ dataSource.products = {
           cream: {label: 'Sour cream', price: 2},
         },
       },
-      toppings: {
+      toppings: {  
         label: 'Toppings',
         type: 'checkboxes',
         options: {
@@ -67,6 +67,9 @@ dataSource.products = {
           salami: {label: 'Salami', price: 3},
         },
       },
+      //toppings.options.salami
+      // toppings[options][salami]
+      // toppings.options[optionId]
       crust: {
         label: 'pizza crust',
         type: 'select',
