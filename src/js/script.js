@@ -186,6 +186,8 @@
           }
         }
       }
+      // multiplay price by amount
+      price *=thisProduct.amountWidget.value;
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
 
@@ -210,6 +212,7 @@
     initAmountWidget(){
       const thisProduct= this;
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem)
+      thisProduct.amountWidgetElem.addEventListener('update', () => thisProduct.processOrder())
     }
 
   }
@@ -224,7 +227,7 @@
       console.log('constructor arguments', element);
 
       thisWidget.getElements(element);
-      thisWidget.setValue(thisWidget.input.value);
+      thisWidget.setValue(thisWidget.input.value || settings.amountWidget.defaultValue);
       thisWidget.initActions();
     }
     getElements(element){
@@ -243,10 +246,16 @@
 
       if(thisWidget.value !== newValue && !isNaN(newValue) && settings.amountWidget.defaultMin <= newValue && settings.amountWidget.defaultMax >= newValue) {
         thisWidget.value = newValue;
-      } 
-        
+      }   
+      thisWidget.announce();
       thisWidget.input.value = thisWidget.value;
 
+    }
+
+    announce(){
+      const thisWidget = this;
+      const event = new Event('update');
+      thisWidget.element.dispatchEvent(event);
     }
 
     initActions(){
