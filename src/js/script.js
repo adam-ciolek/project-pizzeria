@@ -407,7 +407,7 @@
         totalNumber: thisCart.totalNumber,
         deliveryFee: thisCart.deliveryFee,
         products: [],
-      }
+      };
       for (let prod of thisCart.products) {
         payload.products.push(prod.getData());
       }
@@ -495,9 +495,9 @@
     remove(CartProduct) {
       const thisCart = this;
 
-      // const indexOfProduct = thisCart.products.indexOf(CartProduct);
+      const indexOfProduct = thisCart.products.indexOf(CartProduct);
 
-      thisCart.products.shift(CartProduct);
+      thisCart.products.splice(indexOfProduct, 1);
 
       CartProduct.dom.wrapper.remove();
 
@@ -591,7 +591,7 @@
         price: thisCartProduct.price,
         priceSingle: thisCartProduct.priceSingle,
         params: thisCartProduct.params,
-      }
+      };
       return productData;
     }
 
