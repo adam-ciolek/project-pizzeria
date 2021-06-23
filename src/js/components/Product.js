@@ -140,9 +140,9 @@ class Product {
       }
     }
     // multiplay price by amount
+    thisProduct.priceSingle = price;
     price *= thisProduct.amountWidget.value;
     // update calculated price in the HTML
-    thisProduct.priceSingle = price;
     thisProduct.priceElem.innerHTML = price;
 
 
@@ -220,9 +220,9 @@ class Product {
       // for every option in this category
       for (let optionId in param.options) {
         const option = param.options[optionId];
-        const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
+        // const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
 
-        if (optionSelected) {
+        if (formData[paramId] && formData[paramId].includes(optionId)) {
           // option is selected!
           params[paramId].options[optionId] = option.label;
         }
