@@ -31,6 +31,15 @@ export const select = {
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
+    datePicker: {
+      wrapper: '.date-picker',
+      input: `input[name="date"]`,
+    },
+    hourPicker: {
+      wrapper: '.hour-picker',
+      input: 'input[type="range"]',
+      output: '.output',
+    },
   },
   cart: {
     productList: '.cart__order-summary',
@@ -49,18 +58,6 @@ export const select = {
     price: '.cart__product-price',
     edit: '[href="#edit"]',
     remove: '[href="#remove"]',
-  },
-  // New links
-  widgetsNew: {
-    datePicker: {
-      wrapper: '.date-picker',
-      input: `input[name="date"]`,
-    },
-    hourPicker: {
-      wrapper: '.hour-picker',
-      input: 'input[type="range"]',
-      output: '.output',
-    },
   },
   booking: {
     peopleAmount: '.people-amount',
