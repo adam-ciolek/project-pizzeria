@@ -114,7 +114,7 @@ export const settings = {
   booking: {
     tableIdAttribute: 'data-table',
   },
-  dbNew: {
+  dbN: {
     url: '//localhost:3131',
     product: 'product',
     order: 'order',

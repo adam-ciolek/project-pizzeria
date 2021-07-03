@@ -79,7 +79,6 @@ const app = {
     const thisApp = this;
     thisApp.data = {};
     const url = settings.db.url + '/' + settings.db.products;
-
     fetch(url)
       .then(rawResponse => rawResponse.json())
       .then(function (parsedResponse) {
