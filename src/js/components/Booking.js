@@ -22,7 +22,7 @@ export class Booking {
     this.dom.hoursAmount = document.querySelector(select.booking.hoursAmount);
 
     this.dom.datePicker = document.querySelector(select.widgets.datePicker.wrapper);
-    this.dom.datePicker = document.querySelector(select.widgets.hourPicker.wrapper);
+    this.dom.hourPicker = document.querySelector(select.widgets.hourPicker.wrapper);
   }
 
   initWidgets() {
