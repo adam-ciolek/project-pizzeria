@@ -102,8 +102,14 @@ export const settings = {
     url: '//localhost:3131',
     products: 'products',
     orders: 'orders',
+    booking: 'bookings',
+    event: 'events',
+    dateStartParamKey: 'date_gte',
+    dateEndParamKey: 'date_lte',
+    notRepeatParam: 'repeat=false',
+    repeatParam: 'repeat_ne=false',
   },
-  // New lines
+  // New code
   hours: {
     open: 12,
     close: 24,
@@ -114,17 +120,17 @@ export const settings = {
   booking: {
     tableIdAttribute: 'data-table',
   },
-  dbN: {
-    url: '//localhost:3131',
-    product: 'product',
-    order: 'order',
-    booking: 'booking',
-    event: 'event',
-    dateStartParamKey: 'date_gte',
-    dateEndParamKey: 'date_lte',
-    notRepeatParam: 'repeat=false',
-    repeatParam: 'repeat_ne=false',
-  },
+  // dbN: {
+  //   url: '//localhost:3131',
+  //   product: 'product',
+  //   order: 'order',
+  //   booking: 'booking',
+  //   event: 'event',
+  //   dateStartParamKey: 'date_gte',
+  //   dateEndParamKey: 'date_lte',
+  //   notRepeatParam: 'repeat=false',
+  //   repeatParam: 'repeat_ne=false',
+  // },
 };
 
 export const templates = {
