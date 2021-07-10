@@ -236,35 +236,35 @@ export class Booking {
     const url = settings.db.url + '/' + settings.db.booking;
 
     const bookingForm = {
-      date: this.datePicker, 
-      hour: this.hourPicker,
+      date: this.dom.datePicker.value, 
+      hour: this.dom.hourPicker.value,
       table: parseInt(this.selectedTable),
-      duration: parseInt(this.hoursAmountWidget),
-      ppl: parseInt(this.peopleAmountWidget),
+      duration: parseInt(this.hoursAmountWidget.value),
+      ppl: parseInt(this.peopleAmountWidget.value),
       starters: [],
-      phone: this.dom.phone,
-      address: this.dom.adress,
+      phone: this.dom.phone.value,
+      address: this.dom.adress.value,
     };
 
-    // const getCircularReplacer = () => {
-    //   const seen = new WeakSet();
-    //   return (key, value) => {
-    //     if (typeof value === 'object' && value !== null) {
-    //       if (seen.has(value)) {
-    //         return;
-    //       }
-    //       seen.add(value);
-    //     }
-    //     return value;
-    //   };
-    // };
+    const getCircularReplacer = () => {
+      const seen = new WeakSet();
+      return (key, value) => {
+        if (typeof value === 'object' && value !== null) {
+          if (seen.has(value)) {
+            return;
+          }
+          seen.add(value);
+        }
+        return value;
+      };
+    };
 
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(bookingForm),
+      body: JSON.stringify(bookingForm, getCircularReplacer),
     };
 
     fetch(url, options)
