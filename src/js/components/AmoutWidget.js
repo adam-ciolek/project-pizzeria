@@ -24,24 +24,6 @@ export class AmountWidget extends BaseWidget {
 
   }
 
-  // setValue(value) {
-  //   const thisWidget = this;
-  //   const newValue = thisWidget.parseValue(value);
-  //   // TODO: add validation
-
-  //   if (thisWidget.value !== newValue && thisWidget.isValid(newValue)) {
-  //     thisWidget.value = newValue;
-  //   }
-  //   thisWidget.announce();
-
-  //   thisWidget.renderValue();
-
-  // }
-
-  // parseValue(value) {
-  //   return parseInt(value);
-  // }
-
   isValid(value) {
     return !isNaN(value)
       && settings.amountWidget.defaultMin <= value
@@ -54,14 +36,6 @@ export class AmountWidget extends BaseWidget {
     thisWidget.dom.input.value = thisWidget.correctValue;
 
   }
-
-  // announce() {
-  //   const thisWidget = this;
-  //   const event = new CustomEvent('update', {
-  //     bubbles: true
-  //   });
-  //   thisWidget.element.dispatchEvent(event);
-  // }
 
   initActions() {
     const thisWidget = this;
