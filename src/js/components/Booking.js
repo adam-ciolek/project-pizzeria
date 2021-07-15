@@ -237,7 +237,7 @@ export class Booking {
 
     const bookingForm = {
       date: this.date, 
-      hour: this.hour,
+      hour: this.hourPicker.value,
       table: parseInt(this.selectedTable),
       duration: parseInt(this.hoursAmountWidget.value),
       ppl: parseInt(this.peopleAmountWidget.value),
